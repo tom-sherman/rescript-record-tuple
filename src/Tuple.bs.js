@@ -12,11 +12,7 @@ function toArray(tuple) {
   return Array.from(tuple);
 }
 
-function get(tuple) {
-  return function (param) {
-    return Caml_array.get(tuple, param);
-  };
-}
+var get = Caml_array.get;
 
 exports.fromArray = fromArray;
 exports.toArray = toArray;

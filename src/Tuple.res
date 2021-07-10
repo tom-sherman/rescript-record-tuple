@@ -17,7 +17,7 @@ external isTuple: 'a => bool = "isTuple"
 let toArray = tuple => tuple->castToArrayLike->Js.Array2.from
 
 external unsafe_get: (t<'a>, int) => 'a = "%array_unsafe_get"
-let get = tuple => (Obj.magic((tuple: t<'a>)): array<'a>)->Array.get
+let get = (tuple, i) => (Obj.magic((tuple: t<'a>)): array<'a>)->Array.get(i)
 
 @get external length: t<'a> => int = "length"
 
